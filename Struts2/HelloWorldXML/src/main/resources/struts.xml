@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+
+	<package name="user" namespace="/User" extends="struts-default">
+		<action name="helloworld" class="com.skumar.struts2.action.HelloWorldAction">
+			<result name="SUCCESS">/helloworld.jsp</result>
+		</action>
+	</package>
+
+
+
+<!-- An example of Namespace configuration. 
+URL: http://localhost:8080/HelloWorldXML/SomeNamespace/helloworld.action
+Display Content from helloworld.jsp which is in webapp/SomeNamespace
+Note: here we have NOT added "/" with helloworld.jsp
+ -->
+	<package name="somepackage" namespace="/SomeNamespace" extends="struts-default">
+		<action name="helloworld" class="com.skumar.struts2.action.NamespaceAction">
+			<result name="SUCCESS">helloworld.jsp</result>
+		</action>
+	</package>
+
+</struts>
